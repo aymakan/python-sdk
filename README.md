@@ -2,24 +2,36 @@
 This is the official Aymakan Python SDK. It can be used to integrate with Aymakan APIs. The following features list 
 are available in this SDK. For more details about our API requests and responses [click here](https://developer.aymakan.com.sa/docs/1.0).
 
-- Ping Aymakan API
-- Fetch Aymakan Cities List
-- Create a Shipment
-- Create a reverse pickup Shipment
-- Get paginated list of Shipments
-- Track shipments by tracking numbers
-- Track shipments by reference numbers
-- Print single shipment AWB
-- Print multiple shipments AWBs
-- Cancel Shipment
-- Get Web Hook associated to account
-- Create new web hook if there are no web hooks set at account
-- Update webhook
-- Delete webhook
-- Fetch all addresses
-- Create new address
+- Ping API
+- Aymakan Cities
+- Create shipping
+- Create reverse pickup Shipping
+- Track shipping
+- Track shipping by reference
+- Cancel Shipping
+- Cancel shipping by reference
+- Shipping AWB label
+- Bulk shipping AWB labels
+- Customer shipping
+- ########################
+- Pickup requests
+- Create pickup request
+- Cancel pickup request
+- Time slots
+- ########################
+- Customer Address
+- Get Address
+- Add Address
 - Update address
 - Delete address
+- ########################
+- Web Hooks
+- Get Web hooks
+- Add Web Hook
+- Update Web Hook
+- Delete webhook
+
+
 
 ## Requirements
 
@@ -40,44 +52,66 @@ Setting configuration while instantiating the Client object
 
 Used for pip based installation
 ```python
-from aymakan import Client
+from aymakan-sdk import Client
 
+client = Client()
 
-
+client.setApiKey('Api-secret-key')
+client.setSandBox()
 ```
 
-```php
-<?php
-// 1. Autoload the SDK Package. This will include all the files and classes to your autoloader'
-// Used for composer based installation
+## Ping API Method
 
-require __DIR__  . '/vendor/autoload.php';
+Below is an example on how to fetch api status through ping API call:
 
-// Instantiate the client class
-$client = new \Aymakan\Client();
-// set token
-$client->setApikey('ENTER-YOUR-API-KEY-HERE');
-// set Sandbox testing mode
-$client->setSandbox(true);
-
+```python
+res = client.pingApi();
+client.prettyPrint(res)
 ```
+
+[Ping API Details](https://developer.aymakan.com.sa/docs/1.0/cities)
 
 ## Cities Method
 
 Below is an example on how to fetch all cities through GetCities API call:
 
-```php
-<?php
-
-$response = $client->getCityList();
-echo $response . "\n";
-
+```python
+res = client.getCityList();
+client.prettyPrint(res)
 ```
 
-[GetCities API Details](https://developer.aymakan.com.sa/docs/1.0/cities)
+[Cities API Details](https://developer.aymakan.com.sa/docs/1.0/cities)
 
 ## Shipping Methods
 
+### Create Shipping
+
+Creates a new shipment , to find out more details about `request parameters` checkout our  
+[Create Shipping API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-shipping)
+```python
+data = {
+    #request parameters
+    #...
+    #...
+}
+
+res = client.createShipment(data)
+client.prettyPrint(res)
+```
+### Create a Reverse Pickup Shipping
+
+Creates a reverse pickup shipment , to find out more details about `request parameters` checkout our  
+[Create Reverse Pickup ShippingAPI Documentation](https://developer.aymakan.com.sa/docs/1.0/create-reverse-pickup-shipping)
+```python
+data = {
+    #request parameters
+    #...
+    #...
+}
+
+res = client.createReversePickupShipment(data)
+client.prettyPrint(res)
+```
 ### Track Shipping
 
 
@@ -93,19 +127,19 @@ It is important to note that the tracking numbers should be sent in an array for
 | Tracking Number  | Array  |  Yes  |
 
 
-```php
-//Track single shipment 
-$response = $client->trackShipment(['AY120266']);
+```python
+#Track single shipment 
+res = client.trackShipment(['AY120266'])
 
-//Track multiple shipments
-$response = $client->trackShipment(['AY669001659', '143862', '143866']);
+#Track multiple shipments
+res = client.trackShipment(['AY669001659', '143862', '143866'])
 
-echo $response . "\n";
+client.prettyPrint(res)
 ```
 
-[TrackShipment API Details](https://developer.aymakan.com.sa/docs/1.0/track-shipping)
+[Track Shipping API Details](https://developer.aymakan.com.sa/docs/1.0/track-shipping)
 
-### Fetch Shipment Using Reference
+### Track Shipping Using Reference
 
 Below is an example on how to track shipments by reference number.
 Shipments can be fetched by reference number as a single shipment or multiple shipments at the same time .
@@ -118,43 +152,17 @@ It is important to note that the reference number numbers should be sent in an a
 | Reference Number | Array    | Yes |
 
 
-```php
-//Track single shipment by reference number
-$response = $client->shipmentByReference(['200018179']);
+```python
+#Track single shipment by reference number
+res = client.shipmentByReference(['200018179'])
 
-//Track Multiple shipment by reference number
-$response = $client->shipmentByReference(['200018179','test-200018179']);
+#Track Multiple shipment by reference number
+res = client.shipmentByReference(['200018179','test-200018179'])
 
-echo $response . "\n";
+client.prettyPrint(res)
 ```
 
 [Shipment By Reference API Details](https://developer.aymakan.com.sa/docs/1.0/shipments-by-reference)
-
-
-### Create Shipping
-
-Creates a new shipment , to find out more details about `request parameters` checkout our  
-[Create Shipment API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-shipping)
-```php
-$data = array(
- //request parameters
-);
-
-$response = $client->createShipment($data);
-echo $response . "\n";
-```
-### Create a Reverse Pickup Shipping
-
-Creates a reverse pickup shipment , to find out more details about `request parameters` checkout our  
-[Create Reverse Pickup Shipment API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-reverse-pickup-shipping)
-```php
-$data = array(
- //request parameters
-);
-
-$response = $client->createReversePickupShipment($data);
-echo $response . "\n";
-```
 
 ### Cancel Shipping
 
@@ -169,15 +177,37 @@ Below is an example of how to Cancel Shipment :
 | Tracking Number  | `tracking` | Array | Yes|
 
 
-```php
-
-$response = $client->cancelShipment(['tracking' => "AY120266"]);
+```python
+res = client.cancelShipment({"tracking": "AY120266"})
 
 echo $response . "\n";
 ```
 [Cancel Shipment API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-shipping)
 
+### Cancel Shipping Using Reference
 
+Below is an example on how to cancel shipments by reference number.
+Shipments can be fetched by reference number as a single shipment or multiple shipments at the same time .
+It is important to note that the reference number numbers should be sent in an array format.
+
+#### Mandatory Parameter
+
+| Parameter    |    Type    | Mandatory|
+|--------------|----------------|----------------|
+| Reference Number | Array    | Yes |
+
+
+```python
+#Track single shipment by reference number
+res = client.shipmentByReference(['200018179'])
+
+#Track Multiple shipment by reference number
+res = client.shipmentByReference(['200018179','test-200018179'])
+
+client.prettyPrint(res)
+```
+
+[Shipment By Reference API Details](https://developer.aymakan.com.sa/docs/1.0/shipments-by-reference)
 ### Shipping AWB label Printing
 
 
@@ -192,11 +222,11 @@ returns a URL to download the pdf file for all AWB
 | Tracking Code  | `tracking_number` |String| Yes
 
 
-```php
+```python
 
-$response = $client->getShipmentLabel("AY120266");
+res = client.getShipmentLabel("AY120266")
 
-echo $response . "\n";
+client.prettyPrint(res)
 ```
 [Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/1.0/shipping-awb-label)
 
@@ -215,11 +245,11 @@ this API returns a URL to download the pdf file for all AWB.
 | Tracking Number  | Array |Yes|
 
 
-```php
-//Get multiple shipment label
-$client->getBulkShipmentLabel(['AY669001659', '143862', '143866', '143892']);
+```python
+#Get multiple shipment label
+res = client.getBulkShipmentLabel(['AY669001659', '143862', '143866', '143892'])
 
-echo $response . "\n";
+client.prettyPrint(res)
 ```
 [Bulk Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/1.0/bulk-awb-labels)
 
@@ -228,9 +258,9 @@ echo $response . "\n";
 
 Below is an example on how to make the Customer Shipping  API call:
 
-```php
-$response = $client->getCustomerShipments();
-echo $response . "\n";
+```python
+res = client.getCustomerShipments();
+client.prettyPrint(res)
 ```
 [Customer Shipping  API Details](https://developer.aymakan.com.sa/docs/1.0/customer-shipping)
 

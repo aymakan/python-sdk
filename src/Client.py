@@ -1,3 +1,5 @@
+import json
+
 import requests
 from decouple import config
 
@@ -34,6 +36,10 @@ class Client:
     def isSandBox(self):
         return self.__testing
 
+    def prettyPrint(self, res):
+        res = res.json()
+        print(json.dumps(res, indent=4, sort_keys=True, ensure_ascii=False))
+
     def callAPI(self, method, url=None, data=False):
 
         headers = {
@@ -59,11 +65,19 @@ class Client:
         except Exception as e:
             print(e)
 
+    # General API methods
+
     def pingApi(self):
         return self.callAPI('GET', self.__url + '/ping')
 
     def getCityList(self):
         return self.callAPI('GET', self.__url + '/cities')
+
+    def createShipment(self, data):
+        return self.callAPI('POST', self.__url + '/shipping/create', data)
+
+    def createReversePickupShipment(self, data):
+        return self.callAPI('POST', self.__url + '/shipping/create/reverse_pickup', data)
 
     def trackShipment(self, tracking):
         if isinstance(tracking, list):
@@ -74,6 +88,12 @@ class Client:
         if isinstance(reference, list):
             reference = ",".join(reference)
         return self.callAPI('GET', self.__url + '/shipping/by_reference/' + reference)
+
+    def cancelShipment(self, data):
+        return self.callAPI('POST', self.__url + '/shipping/cancel', data)
+
+    def cancelShipmentByReference(self, data):
+        return self.callAPI('POST', self.__url + '/shipping/cancel_by_reference', data)
 
     def getShipmentLabel(self, tracking):
         return self.callAPI('GET', self.__url + '/shipping/awb/tracking/' + tracking)
@@ -86,29 +106,21 @@ class Client:
     def getCustomerShipments(self):
         return self.callAPI('GET', self.__url + '/customer/shipments')
 
-    def createShipment(self, data):
-        return self.callAPI('POST', self.__url + '/shipping/create', data)
+    # Pickup requests methods:
 
-    def createReversePickupShipment(self, data):
-        return self.callAPI('POST', self.__url + '/shipping/create/reverse_pickup', data)
+    def pickupRequest(self):
+        return self.callAPI('GET', self.__url + '/pickup_request/list')
 
-    def cancelShipment(self, data):
-        return self.callAPI('POST', self.__url + '/shipping/cancel', data)
+    def createPickupRequest(self, data):
+        return self.callAPI('POST', self.__url + '/pickup_request/create', data)
 
-    def cancelShipmentByReference(self, data):
-        return self.callAPI('POST', self.__url + '/shipping/cancel_by_reference', data)
+    def cancelPickupRequest(self, data):
+        return self.callAPI('POST', self.__url + '/pickup_request/cancel', data)
 
-    def getWebHook(self):
-        return self.callAPI('GET', self.__url + '/webhooks/list')
+    def timeSlots(self, data):
+        return self.callAPI('GET', self.__url + '/time_slots/' + data)
 
-    def createWebHook(self, data):
-        return self.callAPI('POST', self.__url + '/webhooks/create', data)
-
-    def updateWebHook(self, data):
-        return self.callAPI('PUT', self.__url + '/webhooks/update', data)
-
-    def deleteWebHook(self):
-        return self.callAPI('DELETE', self.__url + '/webhooks/delete')
+    # Customer address methods:
 
     def getAddress(self):
         return self.callAPI('GET', self.__url + '/address/list')
@@ -122,14 +134,16 @@ class Client:
     def deleteAddress(self, data):
         return self.callAPI('DELETE', self.__url + '/address/delete', data)
 
-    def pickupRequest(self):
-        return self.callAPI('GET', self.__url + '/pickup_request/list')
+    # WebHook API methods:
 
-    def createPickupRequest(self, data):
-        return self.callAPI('POST', self.__url + '/pickup_request/create', data)
+    def getWebHook(self):
+        return self.callAPI('GET', self.__url + '/webhooks/list')
 
-    def cancelPickupRequest(self, data):
-        return self.callAPI('POST', self.__url + '/pickup_request/cancel', data)
+    def createWebHook(self, data):
+        return self.callAPI('POST', self.__url + '/webhooks/create', data)
 
-    def timeSlots(self, data):
-        return self.callAPI('GET', self.__url + '/time_slots/' + data)
+    def updateWebHook(self, data):
+        return self.callAPI('PUT', self.__url + '/webhooks/update', data)
+
+    def deleteWebHook(self):
+        return self.callAPI('DELETE', self.__url + '/webhooks/delete')
