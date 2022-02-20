@@ -79,9 +79,8 @@ res = client.pingApi();
 client.prettyPrint(res)
 ```
 
-[Ping API Details](https://developer.aymakan.com.sa/docs/1.0/ping)
-<p align="right">(<a href="#top">back to top</a>)</p>
-<p><a href="https://developer.aymakan.com.sa/docs/1.0/ping" target="_blank">Ping API Details</a></p>
+[Ping API Details](https://developer.aymakan.com.sa/docs/1.0/ping) <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 ### Cities Method
 
@@ -92,7 +91,7 @@ res = client.getCityList();
 client.prettyPrint(res)
 ```
 
-[Cities API Details](https://developer.aymakan.com.sa/docs/1.0/cities)
+[Cities API Details](https://developer.aymakan.com.sa/docs/1.0/cities) <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Shipping Methods
 
@@ -110,6 +109,7 @@ data = {
 res = client.createShipment(data)
 client.prettyPrint(res)
 ```
+ <p align="right">(<a href="#top">back to top</a>)</p>
 ### Create a Reverse Pickup Shipping
 
 Creates a reverse pickup shipment , to find out more details about `request parameters` checkout our  
@@ -124,6 +124,8 @@ data = {
 res = client.createReversePickupShipment(data)
 client.prettyPrint(res)
 ```
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Track Shipping
 
 
@@ -149,7 +151,7 @@ res = client.trackShipment(['AY669001659', '143862', '143866'])
 client.prettyPrint(res)
 ```
 
-[Track Shipping API Details](https://developer.aymakan.com.sa/docs/1.0/track-shipping)
+[Track Shipping API Details](https://developer.aymakan.com.sa/docs/1.0/track-shipping) <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Track Shipping Using Reference
 
@@ -175,6 +177,7 @@ client.prettyPrint(res)
 ```
 
 [Shipment By Reference API Details](https://developer.aymakan.com.sa/docs/1.0/shipments-by-reference)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Cancel Shipping
 
@@ -194,6 +197,7 @@ res = client.cancelShipment({"tracking": "AY120266"})
 client.prettyPrint(res)
 ```
 [Cancel Shipment API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-shipping)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Cancel Shipping Using Reference
 
@@ -219,6 +223,8 @@ client.prettyPrint(res)
 ```
 
 [Cancel shipment By Reference API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-shipping-by-reference)
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Shipping AWB label Printing
 
 Below is an example on how to make the Shipping AWB label Printing API call.
@@ -237,7 +243,7 @@ res = client.getShipmentLabel("AY120266")
 client.prettyPrint(res)
 ```
 [Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/1.0/shipping-awb-label)
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Bulk Shipping AWB label Printing
 
@@ -260,6 +266,7 @@ res = client.getBulkShipmentLabel(['AY669001659', '143862', '143866', '143892'])
 client.prettyPrint(res)
 ```
 [Bulk Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/1.0/bulk-awb-labels)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Customer Shipping
 
@@ -271,6 +278,7 @@ res = client.getCustomerShipments();
 client.prettyPrint(res)
 ```
 [Customer Shipping  API Details](https://developer.aymakan.com.sa/docs/1.0/customer-shipping)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Pickup Requests Methods
 ### Get Pickup Requests
@@ -280,6 +288,9 @@ This API fetches all current customer pickup requests.
 res = client.pickupRequest()
 client.prettyPrint(res)
 ```
+[Get Pickup Requests API Details](https://developer.aymakan.com.sa/docs/1.0/pickup-requests)
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Create pickup request
 Below is an example on how to create a pickup request.
 
@@ -296,6 +307,8 @@ data = {
 res = client.createPickupRequest(data)
 client.prettyPrint(res)
 ```
+[Create Pickup Request API Details](https://developer.aymakan.com.sa/docs/1.0/create-pickup-request)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Cancel pickup request
 Below is an example on how to cancel a pickup request.
@@ -308,6 +321,8 @@ data = {
 res = client.cancelPickupRequest(data)
 client.prettyPrint(res)
 ```
+[Cancel Pickup Request API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-pickup-request)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Time slots
 Below is an example on how to fetch all time slots available to current customer.
@@ -316,6 +331,8 @@ Below is an example on how to fetch all time slots available to current customer
 res = client.timeSlots("2022-12-02")
 client.prettyPrint(res)
 ```
+[Time Slots API Details](https://developer.aymakan.com.sa/docs/1.0/time-slots)
+<p align="right">(<a href="#top">back to top</a>)</p>
 ## Customer Addresses Methods 
 
 Manages address associated to customer account.
