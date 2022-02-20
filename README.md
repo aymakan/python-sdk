@@ -26,10 +26,10 @@ are available in this SDK. For more details about our API requests and responses
   - [Update address](#update-address)
   - [Delete address](#delete-address)
 - ### [WebHooks Methods](#web-hooks)
-  - [Get Web hooks](#get-web-hooks)
-  - [Add Web Hook](#add-web-hooks)
-  - [Update Web Hook](#update-web-hooks)
-  - [Delete webhook](#delete-web-hooks)
+  - [Get Web hooks](#get-webhooks)
+  - [Add Web Hook](#add-webhook)
+  - [Update Web Hook](#update-webhook)
+  - [Delete webhook](#delete-webhook)
 
 ------------------------------
 ## Requirements
@@ -456,7 +456,7 @@ client.prettyPrint(res)
 [Update Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-update)
 
 
-### Delete Webhooks
+### Delete Webhook
 
 Below is an example on how to delete webhooks .
 
