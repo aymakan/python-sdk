@@ -22,7 +22,7 @@ are available in this SDK. For more details about our API requests and responses
   - [Time slots](#time-slots)
 - ### [Customer Addresses Methods](#customer-addresses-methods)
   - [Get Address](#get-address)
-  - [Add Address](#add-address)
+  - [Add Address](#create-address)
   - [Update address](#update-address)
   - [Delete address](#delete-address)
 - ### [WebHooks Methods](#web-hooks)
@@ -57,6 +57,16 @@ client = Client()
 
 client.setApiKey('Api-secret-key')
 client.setSandBox()
+
+# Basic usage:
+res = client.getCityList()
+
+print(res.url)         # <-- for response URL
+print(res.status_code) # <-- for response status code
+print(res.json())      # <-- for response data in JSON format
+
+# or just use this method to print indented/pretty JSON
+client.prettyPrint(res)
 ```
 
 ## General Methods
