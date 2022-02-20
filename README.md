@@ -519,5 +519,6 @@ Below is an example on how to delete webhooks .
 res = client.deleteWebHook()
 client.prettyPrint(res)
 ```
+[sthg](<a href="http://example.com/" target="_blank">example</a>)
 
 [Delete Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-delete){:target="\_blank"}
