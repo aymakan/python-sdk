@@ -38,7 +38,7 @@ class Client:
 
     for the other methods please visit https://github.com/aymakan/python-sdk/
     """
-    __url = ""
+    __url = "https://api.aymakan.net/v2/"
     __api_key = ""
     __testing = False
 
