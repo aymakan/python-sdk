@@ -356,14 +356,14 @@ Below is an example on how to make the create address associated to customer acc
 ```python
 data = {
     "title": "Mr",
-    "name": "Test",
-    "email": "test@aymakan.com.sa",
+    "name": "example",
+    "email": "example@example.com",
     "city": "Riyadh",
     "address": 123,
     "neighbourhood": "Al-Sahafah",
     "postcode": "11534",
-    "phone": 580000000,
-    "description": "Test User"
+    "phone": 0599999999,
+    "description": "create address example"
 }
 
 res = client.createAddress(data)
@@ -401,14 +401,14 @@ Below is an example on how to update address associated to customer account.
 data = {
     "id": "3",
     "title": "Mr",
-    "name": "Test",
-    "email": "test@aymakan.com.sa",
+    "name": "example",
+    "email": "example@example.com",
     "city": "Riyadh",
     "address": 123,
     "neighbourhood": "Al-Sahafah",
     "postcode": "11534",
-    "phone": 580000000,
-    "description": "Test User"
+    "phone": 0599999999,
+    "description": "create address example"
 }
 
 res = client.updateAddress(data)
@@ -502,6 +502,7 @@ data = {
     "id": 219,
     "webhook_url": "https://www.testings.com"
 }
+
 res = client.updateWebHook(data)
 client.prettyPrint(res)
 ```
@@ -519,4 +520,4 @@ res = client.deleteWebHook()
 client.prettyPrint(res)
 ```
 
-[Delete Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-delete)
+[Delete Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-delete){:target="\_blank"}

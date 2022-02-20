@@ -1,13 +1,10 @@
 import json
-
 import requests
-from decouple import config
 
 
 class Client:
     """
-    A Client class to communicate with the AyMakan API.
-
+    A Client class to communicate with AyMakan API.
     ...
 
     Attributes
@@ -21,17 +18,28 @@ class Client:
 
     Methods
     -------
-    setApiKey(token)
-    getToken()
-    setSandBox()
-    unsetSandBox()
-    isSandBox()
-    prettyPrint(res)
+    setApiKey(token):
+        Takes in token and sets it.
 
+    getToken():
+        Returns the api token.
 
+    setSandBox():
+        Sets the current api url to development url.
+
+    unsetSandBox():
+        Sets the current api url to production url.
+
+    isSandBox():
+        To print an indented/prettified version of JSON.
+
+    prettyPrint(res):
+        To check the current working environment.
+
+    for the other methods please visit https://github.com/aymakan/python-sdk/
     """
-    __url = config('prd_url')
-    __api_key = config('prd_api_key')
+    __url = ""
+    __api_key = ""
     __testing = False
 
     def __init__(self, url=None, api_key=None, testing=None):
@@ -65,22 +73,35 @@ class Client:
     def setSandBox(self):
         """Sets the current api url to development url."""
         self.__testing = True
-        self.__url = config('dev_url')
+        self.__url = "https://dev-api.aymakan.com.sa/v2"
 
     def unsetSandBox(self):
         """Sets the current api url to production url."""
         self.__testing = False
-        self.__url = config('prd_url')
+        self.__url = "https://api.aymakan.net/v2"
 
     def isSandBox(self):
         """To check the current working environment."""
         return self.__testing
 
     def prettyPrint(self, res):
+        """To print an indented/prettified version of JSON."""
         res = res.json()
         print(json.dumps(res, indent=4, sort_keys=True, ensure_ascii=False))
 
     def __callAPI(self, method, url=None, data=False):
+        """
+        The api caller method.
+
+        Parameters
+        ----------
+        method : str
+            The HTTP calling method
+        url : str
+            The specified api endpoint
+        data : str, dict
+            The required request data for the endpoint
+        """
 
         headers = {
             'Accept': 'application/json',
