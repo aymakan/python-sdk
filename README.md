@@ -15,11 +15,11 @@ are available in this SDK. For more details about our API requests and responses
   - [Shipping AWB label](#shipping-awb-label-printing)
   - [Bulk shipping AWB labels](#bulk-shipping-awb-label-printing)
   - [Customer shipping](#customer-shipping)
-- ### Pickup Requests Methods
-  - Get pickup requests
-  - Create pickup request
-  - Cancel pickup request
-  - Time slots
+- ### [Pickup Requests Methods](#pickup-requests-methods)
+  - [Get pickup requests](#get-pickup-requests)
+  - [Create pickup request](#create-pickup-request)
+  - [Cancel pickup request](#cancel-pickup-request)
+  - [Time slots](#time-slots)
 - ### [Customer Addresses Methods](#customer-addresses-methods)
   - [Get Address](#get-address)
   - [Add Address](#add-address)
@@ -261,7 +261,50 @@ client.prettyPrint(res)
 ```
 [Customer Shipping  API Details](https://developer.aymakan.com.sa/docs/1.0/customer-shipping)
 
+## Pickup Requests Methods
+### Get Pickup Requests
+This API fetches all current customer pickup requests.
 
+```python
+res = client.pickupRequest()
+client.prettyPrint(res)
+```
+### Create pickup request
+Below is an example on how to create a pickup request.
+
+```python
+data = {
+    "pickup_date": "2022-12-02",
+    "time_slot": "afternoon",
+    "contact_name": "example",
+    "contact_phone": "059999999",
+    "address": "example address",
+    "shipments": 2
+}
+
+res = client.createPickupRequest(data)
+client.prettyPrint(res)
+```
+
+### Cancel pickup request
+Below is an example on how to cancel a pickup request.
+
+```python
+data = {
+    "pickup_request": 4021
+}
+
+res = client.cancelPickupRequest(data)
+client.prettyPrint(res)
+```
+
+### Time slots
+Below is an example on how to fetch all time slots available to current customer.
+
+```python
+res = client.timeSlots("2022-12-02")
+client.prettyPrint(res)
+```
 ## Customer Addresses Methods 
 
 Manages address associated to customer account.
