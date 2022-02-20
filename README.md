@@ -79,7 +79,7 @@ res = client.pingApi();
 client.prettyPrint(res)
 ```
 
-[Ping API Details](https://developer.aymakan.com.sa/docs/1.0/cities)
+[Ping API Details](https://developer.aymakan.com.sa/docs/1.0/ping)
 
 ### Cities Method
 
@@ -111,7 +111,7 @@ client.prettyPrint(res)
 ### Create a Reverse Pickup Shipping
 
 Creates a reverse pickup shipment , to find out more details about `request parameters` checkout our  
-[Create Reverse Pickup ShippingAPI Documentation](https://developer.aymakan.com.sa/docs/1.0/create-reverse-pickup-shipping)
+[Create Reverse Pickup Shipping API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-reverse-pickup-shipping)
 ```python
 data = {
     # request parameters
@@ -208,17 +208,16 @@ It is important to note that the reference number numbers should be sent in an a
 
 ```python
 # Track single shipment by reference number
-res = client.shipmentByReference(['200018179'])
+res = client.cancelShipmentByReference(['200018179'])
 
 # Track Multiple shipment by reference number
-res = client.shipmentByReference(['200018179','test-200018179'])
+res = client.cancelShipmentByReference(['200018179','test-200018179'])
 
 client.prettyPrint(res)
 ```
 
-[Shipment By Reference API Details](https://developer.aymakan.com.sa/docs/1.0/shipments-by-reference)
+[Cancel shipment By Reference API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-shipping-by-reference)
 ### Shipping AWB label Printing
-
 
 Below is an example on how to make the Shipping AWB label Printing API call.
 This API requires a single tracking number associated with the customer account , and
