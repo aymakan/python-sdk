@@ -80,6 +80,8 @@ client.prettyPrint(res)
 ```
 
 [Ping API Details](https://developer.aymakan.com.sa/docs/1.0/ping)
+<p align="right">(<a href="#top">back to top</a>)</p>
+<p><a href="https://developer.aymakan.com.sa/docs/1.0/ping" target="_blank">Ping API Details</a></p>
 
 ### Cities Method
 
