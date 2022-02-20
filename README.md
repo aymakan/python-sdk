@@ -4,35 +4,33 @@ are available in this SDK. For more details about our API requests and responses
 
 - Ping API
 - Aymakan Cities
-- Create shipping
-- Create reverse pickup Shipping
-- Track shipping
-- Track shipping by reference
-- Cancel Shipping
-- Cancel shipping by reference
-- Shipping AWB label
-- Bulk shipping AWB labels
-- Customer shipping
-- ########################
-- Pickup requests
-- Create pickup request
-- Cancel pickup request
-- Time slots
-- ########################
-- Customer Address
-- Get Address
-- Add Address
-- Update address
-- Delete address
-- ########################
-- Web Hooks
-- Get Web hooks
-- Add Web Hook
-- Update Web Hook
-- Delete webhook
+- ### Shipping Methods
+  - Create shipping
+  - Create reverse pickup Shipping
+  - Track shipping
+  - Track shipping by reference
+  - Cancel Shipping
+  - Cancel shipping by reference
+  - Shipping AWB label
+  - Bulk shipping AWB labels
+  - Customer shipping
+- ### Pickup Requests Methods
+  - Get pickup requests
+  - Create pickup request
+  - Cancel pickup request
+  - Time slots
+- ### Customer Addresses Methods
+  - Get Address
+  - Add Address
+  - Update address
+  - Delete address
+- ### WebHooks Methods
+  - Get Web hooks
+  - Add Web Hook
+  - Update Web Hook
+  - Delete webhook
 
-
-
+------------------------------
 ## Requirements
 
 * Python 3.0 or higher
@@ -90,9 +88,9 @@ Creates a new shipment , to find out more details about `request parameters` che
 [Create Shipping API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-shipping)
 ```python
 data = {
-    #request parameters
-    #...
-    #...
+    # request parameters
+    # ...
+    # ...
 }
 
 res = client.createShipment(data)
@@ -104,9 +102,9 @@ Creates a reverse pickup shipment , to find out more details about `request para
 [Create Reverse Pickup ShippingAPI Documentation](https://developer.aymakan.com.sa/docs/1.0/create-reverse-pickup-shipping)
 ```python
 data = {
-    #request parameters
-    #...
-    #...
+    # request parameters
+    # ...
+    # ...
 }
 
 res = client.createReversePickupShipment(data)
@@ -128,10 +126,10 @@ It is important to note that the tracking numbers should be sent in an array for
 
 
 ```python
-#Track single shipment 
+# Track single shipment 
 res = client.trackShipment(['AY120266'])
 
-#Track multiple shipments
+# Track multiple shipments
 res = client.trackShipment(['AY669001659', '143862', '143866'])
 
 client.prettyPrint(res)
@@ -153,10 +151,10 @@ It is important to note that the reference number numbers should be sent in an a
 
 
 ```python
-#Track single shipment by reference number
+# Track single shipment by reference number
 res = client.shipmentByReference(['200018179'])
 
-#Track Multiple shipment by reference number
+# Track Multiple shipment by reference number
 res = client.shipmentByReference(['200018179','test-200018179'])
 
 client.prettyPrint(res)
@@ -179,8 +177,7 @@ Below is an example of how to Cancel Shipment :
 
 ```python
 res = client.cancelShipment({"tracking": "AY120266"})
-
-echo $response . "\n";
+client.prettyPrint(res)
 ```
 [Cancel Shipment API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-shipping)
 
@@ -198,10 +195,10 @@ It is important to note that the reference number numbers should be sent in an a
 
 
 ```python
-#Track single shipment by reference number
+# Track single shipment by reference number
 res = client.shipmentByReference(['200018179'])
 
-#Track Multiple shipment by reference number
+# Track Multiple shipment by reference number
 res = client.shipmentByReference(['200018179','test-200018179'])
 
 client.prettyPrint(res)
@@ -223,9 +220,7 @@ returns a URL to download the pdf file for all AWB
 
 
 ```python
-
 res = client.getShipmentLabel("AY120266")
-
 client.prettyPrint(res)
 ```
 [Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/1.0/shipping-awb-label)
@@ -246,7 +241,7 @@ this API returns a URL to download the pdf file for all AWB.
 
 
 ```python
-#Get multiple shipment label
+# Get multiple shipment label
 res = client.getBulkShipmentLabel(['AY669001659', '143862', '143866', '143892'])
 
 client.prettyPrint(res)
@@ -265,72 +260,6 @@ client.prettyPrint(res)
 [Customer Shipping  API Details](https://developer.aymakan.com.sa/docs/1.0/customer-shipping)
 
 
-
-## Web Hooks
-
-Web Hooks are a convenient way to receive real time updates for your shipments as soon as a status is updated. Web Hooks can be used to update customer internal systems with the latest shipments statuses.
-
-
-### Get Webhooks
-
-Below is an example on how to get webhooks .
-
-
-```php
-$response = $client->getWebHook();
-echo $response . "\n";
-```
-
-[Get Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-get)
-
-
-### Add Webhook
-
-Below is an example on how to add webhook .
-
-
-#### Mandatory Parameters
-
-| Parameter    | variable name | Mandatory
-|--------------|---------------|----------------
-| Web Hook URL  | `webhook_url` | Yes
-
-```php
-
-$data = array( "webhook_url" => "https://testings.com" );
- $response = $client->createWebHook($data);
-echo $response . "\n";
-```
-
-[Add Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-add)
-
-
-### Update Webhook
-
-Below is an example on how to update Webhook .
-
-#### Mandatory Parameters
-
-| Parameter    | variable name | Mandatory
-|--------------|---------------|----------------
-| Web Hook URL  | `webhook_url` | Yes
-| ID  | `id` | Yes
-
-
-```php
-
-$data = array(
-    "id"=> 219 ,
-    "webhook_url" => "https://www.testings.com"
-);
- $response = $client->updateWebHook($data);
-echo $response . "\n";
-```
-
-[Update Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-update)
-
-
-
 ## Addresses 
 
 Manages address associated to customer account.
@@ -340,10 +269,9 @@ Manages address associated to customer account.
 
 Fetches ALL addresses associated to customer account.
 
-```php
-$response = $client->getAddress();
-
-echo $response . "\n";
+```python
+res = client.getAddress()
+client.prettyPrint(res)
 ```
 
 [Get Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-get)
@@ -370,23 +298,21 @@ Below is an example on how to make the create address associated to customer acc
 
 
 
-```php
-$data = array(
-    "title" => "Mr",
-    "name" => "Test",
-    "email" => "test@aymakan.com.sa",
-    "city" => "Riyadh",
-    "address" => 123,
-    "neighbourhood" => "Al-Sahafah",
-    "postcode" => "11534",
-    "phone" => 580000000,
-    "description" => "Test User"
-);
+```python
+data = {
+    "title": "Mr",
+    "name": "Test",
+    "email": "test@aymakan.com.sa",
+    "city": "Riyadh",
+    "address": 123,
+    "neighbourhood": "Al-Sahafah",
+    "postcode": "11534",
+    "phone": 580000000,
+    "description": "Test User"
+}
 
-$response = $client->createAddress($data);
-echo $response . "\n";
-
-
+res = client.createAddress(data)
+client.prettyPrint(res)
 ```
 
 [Create Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-add)
@@ -416,24 +342,22 @@ Below is an example on how to update address associated to customer account.
 
 
 
-```php
-$data = array(
-    "id" => "3",
-    "title" => "Mr",
-    "name" => "Test",
-    "email" => "test@aymakan.com.sa",
-    "city" => "Riyadh",
-    "address" => 123,
-    "neighbourhood" => "Al-Sahafah",
-    "postcode" => "11534",
-    "phone" => 580000000,
-    "description" => "Test User"
-);
+```python
+data = {
+    "id": "3",
+    "title": "Mr",
+    "name": "Test",
+    "email": "test@aymakan.com.sa",
+    "city": "Riyadh",
+    "address": 123,
+    "neighbourhood": "Al-Sahafah",
+    "postcode": "11534",
+    "phone": 580000000,
+    "description": "Test User"
+}
 
-$response = $client->createAddress($data);
-echo $response . "\n";
-
-
+res = client.updateAddress(data)
+client.prettyPrint(res)
 ```
 
 [Update Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-update)
@@ -453,19 +377,91 @@ Below is an example on how to delete an address associated to customer account.
 | ID  | `id` | Yes
 
 
-```php
-$data = array(
-    "id" => 544,
-);
+```python
+data = {
+    "id": 544
+}
 
-$response = $client->deleteAddress($data);
-var_dump($response);
-
+$response = client.deleteAddress(data)
+client.prettyPrint(res)
 ```
 
 [Delete Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-delete)
 
 
+## Web Hooks
+
+Web Hooks are a convenient way to receive real time updates for your shipments as soon as a status is updated. Web Hooks can be used to update customer internal systems with the latest shipments statuses.
 
 
+### Get Webhooks
 
+Below is an example on how to get webhooks .
+
+
+```python
+res = client.getWebHook()
+client.prettyPrint(res)
+```
+
+[Get Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-get)
+
+
+### Add Webhook
+
+Below is an example on how to add webhook .
+
+
+#### Mandatory Parameters
+
+| Parameter    | variable name | Mandatory
+|--------------|---------------|----------------
+| Web Hook URL  | `webhook_url` | Yes
+
+```python
+data = {
+    "webhook_url": "https://testings.com"
+}
+
+res = client.createWebHook(data)
+client.prettyPrint(res)
+```
+
+[Add Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-add)
+
+
+### Update Webhook
+
+Below is an example on how to update Webhook .
+
+#### Mandatory Parameters
+
+| Parameter    | variable name | Mandatory
+|--------------|---------------|----------------
+| ID  | `id` | Yes
+| Web Hook URL  | `webhook_url` | Yes
+
+
+```python
+data = {
+    "id": 219,
+    "webhook_url": "https://www.testings.com"
+}
+res = client.updateWebHook(data)
+client.prettyPrint(res)
+```
+
+[Update Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-update)
+
+
+### Delete Webhooks
+
+Below is an example on how to delete webhooks .
+
+
+```python
+res = client.deleteWebHook()
+client.prettyPrint(res)
+```
+
+[Delete Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-delete)
