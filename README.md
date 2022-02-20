@@ -2,10 +2,11 @@
 This is the official Aymakan Python SDK. It can be used to integrate with Aymakan APIs. The following features list 
 are available in this SDK. For more details about our API requests and responses [click here](https://developer.aymakan.com.sa/docs/1.0).
 
-- Ping API
-- Aymakan Cities
-- ### Shipping Methods
-  - Create shipping
+- ### [General Methods](#General-Methods)
+  - Ping API
+  - Aymakan Cities
+- ### [Shipping Methods](#shipping-methods-1)
+  - [Create shipping](#create-shipping)
   - Create reverse pickup Shipping
   - Track shipping
   - Track shipping by reference
@@ -58,7 +59,8 @@ client.setApiKey('Api-secret-key')
 client.setSandBox()
 ```
 
-## Ping API Method
+## General Methods
+### Ping API Method
 
 Below is an example on how to fetch api status through ping API call:
 
@@ -69,7 +71,7 @@ client.prettyPrint(res)
 
 [Ping API Details](https://developer.aymakan.com.sa/docs/1.0/cities)
 
-## Cities Method
+### Cities Method
 
 Below is an example on how to fetch all cities through GetCities API call:
 

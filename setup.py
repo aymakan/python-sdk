@@ -1,6 +1,5 @@
 from setuptools import setup, find_packages
 
-# This call to setup() does all the work
 setup(
     name="aymakan-sdk",
     version="1.0",
@@ -10,10 +9,10 @@ setup(
     url="https://github.com/aymakan/python-sdk/",
     author="Abdullah AlQattan",
     author_email="a.alqattan@aymakan.com.sa",
-    license="MIT",
+    license="Apache 2.0",
     classifiers=[
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache License, Version 2.0",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
@@ -22,7 +21,7 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Operating System :: OS Independent"
     ],
-    packages=["requests, python-decouple"],
+    packages=["aymakan-sdk"],
     include_package_data=True,
-    install_requires=[""]
+    install_requires=["requests"]
 )
