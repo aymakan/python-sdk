@@ -2,34 +2,34 @@
 This is the official Aymakan Python SDK. It can be used to integrate with Aymakan APIs. The following features list 
 are available in this SDK. For more details about our API requests and responses [click here](https://developer.aymakan.com.sa/docs/1.0).
 
-- ### [General Methods](#General-Methods)
-  - Ping API
-  - Aymakan Cities
+- ### [General Methods](#general-methods-1)
+  - [Ping API](#ping-api-method)
+  - [Aymakan Cities](#cities-method)
 - ### [Shipping Methods](#shipping-methods-1)
   - [Create shipping](#create-shipping)
-  - Create reverse pickup Shipping
-  - Track shipping
-  - Track shipping by reference
-  - Cancel Shipping
-  - Cancel shipping by reference
-  - Shipping AWB label
-  - Bulk shipping AWB labels
-  - Customer shipping
+  - [Create reverse pickup Shipping](#create-a-reverse-pickup-shipping)
+  - [Track shipping](#track-shipping)
+  - [Track shipping by reference](#track-shipping-using-reference)
+  - [Cancel Shipping](#cancel-shipping)
+  - [Cancel shipping by reference](#cancel-shipping-using-reference)
+  - [Shipping AWB label](#shipping-awb-label-printing)
+  - [Bulk shipping AWB labels](#bulk-shipping-awb-label-printing)
+  - [Customer shipping](#customer-shipping)
 - ### Pickup Requests Methods
   - Get pickup requests
   - Create pickup request
   - Cancel pickup request
   - Time slots
-- ### Customer Addresses Methods
-  - Get Address
-  - Add Address
-  - Update address
-  - Delete address
-- ### WebHooks Methods
-  - Get Web hooks
-  - Add Web Hook
-  - Update Web Hook
-  - Delete webhook
+- ### [Customer Addresses Methods](#customer-addresses-methods)
+  - [Get Address](#get-address)
+  - [Add Address](#add-address)
+  - [Update address](#update-address)
+  - [Delete address](#delete-address)
+- ### [WebHooks Methods](#web-hooks)
+  - [Get Web hooks](#get-web-hooks)
+  - [Add Web Hook](#add-web-hooks)
+  - [Update Web Hook](#update-web-hooks)
+  - [Delete webhook](#delete-web-hooks)
 
 ------------------------------
 ## Requirements
@@ -262,7 +262,7 @@ client.prettyPrint(res)
 [Customer Shipping  API Details](https://developer.aymakan.com.sa/docs/1.0/customer-shipping)
 
 
-## Addresses 
+## Customer Addresses Methods 
 
 Manages address associated to customer account.
 
