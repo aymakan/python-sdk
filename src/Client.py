@@ -21,7 +21,7 @@ class Client:
     setApiKey(token):
         Takes in token and sets it.
 
-    getToken():
+    getApiKey():
         Returns the api token.
 
     setSandBox():
@@ -66,7 +66,7 @@ class Client:
         """Takes in token and sets it."""
         self.__api_key = token
 
-    def getToken(self):
+    def getApiKey(self):
         """Returns the api token."""
         return self.__api_key
 
