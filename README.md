@@ -25,7 +25,7 @@ are available in this SDK. For more details about our API requests and responses
   - [Add Address](#create-address)
   - [Update address](#update-address)
   - [Delete address](#delete-address)
-- ### [WebHooks Methods](#web-hooks)
+- ### [WebHooks Methods](#web-hooks-methods)
   - [Get Web hooks](#get-webhooks)
   - [Add Web Hook](#add-webhook)
   - [Update Web Hook](#update-webhook)
@@ -68,7 +68,7 @@ print(res.json())      # <-- for response data in JSON format
 # or just use this method to print indented/pretty JSON
 client.prettyPrint(res)
 ```
-
+------
 ## General Methods
 ### Ping API Method
 
@@ -93,6 +93,7 @@ client.prettyPrint(res)
 
 [Cities API Details](https://developer.aymakan.com.sa/docs/1.0/cities) <p align="right">(<a href="#top">back to top</a>)</p>
 
+----
 ## Shipping Methods
 
 ### Create Shipping
@@ -281,6 +282,7 @@ client.prettyPrint(res)
 [Customer Shipping  API Details](https://developer.aymakan.com.sa/docs/1.0/customer-shipping)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+----
 ## Pickup Requests Methods
 ### Get Pickup Requests
 This API fetches all current customer pickup requests.
@@ -351,6 +353,8 @@ client.prettyPrint(res)
 ```
 [Time Slots API Details](https://developer.aymakan.com.sa/docs/1.0/time-slots)
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+-----
 ## Customer Addresses Methods 
 
 Manages address associated to customer account.
@@ -471,7 +475,8 @@ client.prettyPrint(res)
 [Delete Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-delete)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Web Hooks
+----
+## Web Hooks Methods
 
 Web Hooks are a convenient way to receive real time updates for your shipments as soon as a status is updated. Web Hooks can be used to update customer internal systems with the latest shipments statuses.
 
