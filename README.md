@@ -110,6 +110,7 @@ res = client.createShipment(data)
 client.prettyPrint(res)
 ```
  <p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Create a Reverse Pickup Shipping
 
 Creates a reverse pickup shipment , to find out more details about `request parameters` checkout our  
@@ -271,7 +272,7 @@ client.prettyPrint(res)
 ### Customer Shipping
 
 
-Below is an example on how to make the Customer Shipping  API call:
+Below is an example on how to make the Customer Shippings API call:
 
 ```python
 res = client.getCustomerShipments();
@@ -294,6 +295,15 @@ client.prettyPrint(res)
 ### Create pickup request
 Below is an example on how to create a pickup request.
 
+| Parameter              | variable name     | Type      | Mandatory              
+|------------------------|-------------------|-----------|------------------------
+| Date format should be "Y-m-d" | `pickup_date`     | String    | Yes                    
+| Time slot              | `time_slot`       | String    | Yes 
+| The customer's name    | `contact_name`    | String    | Yes     
+| The customer's phone   | `contact_phone`   | String    | Yes   
+| The customer's address | `address`         | String    | Yes     
+| Amount of shipments    | `shipments`       | Integer   | Yes     
+
 ```python
 data = {
     "pickup_date": "2022-12-02",
@@ -313,6 +323,10 @@ client.prettyPrint(res)
 ### Cancel pickup request
 Below is an example on how to cancel a pickup request.
 
+| Parameter         | variable name     | Type      | Mandatory              
+|-------------------|-------------------|-----------|------------------------
+| Pickup request id | `pickup_request`  | Integer | Yes | 
+
 ```python
 data = {
     "pickup_request": 4021
@@ -326,6 +340,10 @@ client.prettyPrint(res)
 
 ### Time slots
 Below is an example on how to fetch all time slots available to current customer.
+
+| Parameter         | variable name     | Type      | Mandatory              
+|-------------------|-------------------|-----------|------------------------
+| Date format should be "Y-m-d" | `pickup_date` | String | Yes 
 
 ```python
 res = client.timeSlots("2022-12-02")
@@ -348,9 +366,7 @@ client.prettyPrint(res)
 ```
 
 [Get Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-get)
-
-
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Create Address
 
@@ -389,10 +405,7 @@ client.prettyPrint(res)
 ```
 
 [Create Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-add)
-
-
-
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Update Address
 
@@ -413,11 +426,9 @@ Below is an example on how to update address associated to customer account.
 | Phone  | `phone` | Yes
 | Description  | `description` | Yes
 
-
-
 ```python
 data = {
-    "id": "3",
+    "id": 3,
     "title": "Mr",
     "name": "example",
     "email": "example@example.com",
@@ -434,9 +445,7 @@ client.prettyPrint(res)
 ```
 
 [Update Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-update)
-
-
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Delete Address
 
@@ -455,12 +464,12 @@ data = {
     "id": 544
 }
 
-$response = client.deleteAddress(data)
+res = client.deleteAddress(data)
 client.prettyPrint(res)
 ```
 
 [Delete Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-delete)
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Web Hooks
 
@@ -478,7 +487,7 @@ client.prettyPrint(res)
 ```
 
 [Get Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-get)
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Add Webhook
 
@@ -501,7 +510,7 @@ client.prettyPrint(res)
 ```
 
 [Add Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-add)
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Update Webhook
 
@@ -526,7 +535,7 @@ client.prettyPrint(res)
 ```
 
 [Update Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-update)
-
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Delete Webhook
 
@@ -539,3 +548,4 @@ client.prettyPrint(res)
 ```
 
 [Delete Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-delete)
+<p align="right">(<a href="#top">back to top</a>)</p>
