@@ -195,7 +195,11 @@ Below is an example of how to Cancel Shipment :
 
 
 ```python
-res = client.cancelShipment({"tracking": "AY120266"})
+data = {
+    "tracking": "AY120266"  
+}
+
+res = client.cancelShipment(data)
 client.prettyPrint(res)
 ```
 [Cancel Shipment API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-shipping)
