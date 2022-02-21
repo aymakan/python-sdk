@@ -36,4 +36,3 @@ for the other usages - see the full documentation at <https://github.com/aymakan
 :copyright: (c) 2022 by Abdullah AlQattan.
 :license: Apache 2.0, see LICENSE for more details.
 """
-from src.Client import Client
