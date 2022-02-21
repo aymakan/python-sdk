@@ -9,10 +9,9 @@ setup(
     url="https://github.com/aymakan/python-sdk/",
     author="Abdullah AlQattan",
     author_email="a.alqattan@aymakan.com.sa",
-    license="Apache 2.0",
+    license='Apache License 2.0',
     classifiers=[
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: Apache License, Version 2.0",
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
@@ -21,7 +20,8 @@ setup(
         "Programming Language :: Python :: 3.9",
         "Operating System :: OS Independent"
     ],
-    packages=["aymakan-sdk"],
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
     include_package_data=True,
     install_requires=["requests"]
 )
