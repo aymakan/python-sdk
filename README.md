@@ -51,7 +51,7 @@ Setting configuration while instantiating the Client object
 
 Used for pip based installation
 ```python
-from aymakan-sdk import Client
+from aymakan.Client import Client
 
 client = Client()
 
