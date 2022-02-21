@@ -12,7 +12,7 @@ AyMakan SDK Library
 This is the official Aymakan Python SDK. It can be used to integrate with Aymakan APIs.
 Basic usage:
 
-from aymakan-sdk import Client
+from aymakan import Client
 
 client = Client()
 
