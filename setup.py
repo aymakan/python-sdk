@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="aymakan-sdk",
-    version="1.0.3",
+    version="1.0.4",
     description="AyMakan SDK",
     long_description="This is official Aymakan Python SDK. It can be used to integrate with Aymakan APIs.",
     long_description_content_type="text/markdown",
