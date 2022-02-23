@@ -2,13 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name="aymakan-sdk",
-    version="1.0.6",
+    version="1.1.0",
     description="AyMakan SDK",
     long_description="This is official Aymakan Python SDK. It can be used to integrate with Aymakan APIs.",
     long_description_content_type="text/markdown",
     url="https://github.com/aymakan/python-sdk/",
-    author="Abdullah AlQattan",
-    author_email="a.alqattan@aymakan.com.sa",
+    author="Aymakan IT",
+    author_email="it@aymakan.com.sa",
     license='Apache License 2.0',
     classifiers=[
         "Intended Audience :: Developers",

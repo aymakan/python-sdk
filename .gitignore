@@ -1,2 +1,3 @@
 dist
 src/aymakan_sdk.egg-info
+/tests/

@@ -33,6 +33,6 @@ print(res.json())      <-- for response data in JSON format
 
 for the other usages - see the full documentation at <https://github.com/aymakan/python-sdk/>.
 
-:copyright: (c) 2022 by Abdullah AlQattan.
+:copyright: (c) 2022 by Aymakan.
 :license: Apache 2.0, see LICENSE for more details.
 """
