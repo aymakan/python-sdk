@@ -3,15 +3,14 @@ import random
 
 import datetime as dt
 
-from src import Client
+from src.aymakan.Client import Client
 
 
 class ClientTestCase(unittest.TestCase):
-    c = Client()
+    c = Client(url="http://127.0.0.1:8000/v2")
 
     def setUp(self):
-        self.c.setSandBox()
-        self.c.setApiKey(config('prd_api_key'))
+        self.c.setApiKey('9825ff836d606c93a9c04f1a10db1348-bcccffa2-286e-46ca-9bb4-3fe11894d072-4b9fad0c4c2eae8ae6940faeb6c5a0a0/123da90252d9d44f33ba3e5bfdba8253/af197dea-bbcb-4509-9455-dc564b8f04d5')
 
     def test_pingApi(self):
         res = self.c.pingApi()
@@ -487,10 +486,10 @@ class ClientTestCase(unittest.TestCase):
         res = self.c.createPickupRequest(data)
         json = res.json()
 
-        pickup_request = json['data']['id']
+        pickup_request_id = json['data']['id']
 
         data = {
-            "pickup_request": pickup_request
+            "pickup_request_id": pickup_request_id
         }
 
         res = self.c.cancelPickupRequest(data)

@@ -329,13 +329,13 @@ client.prettyPrint(res)
 ### Cancel pickup request
 Below is an example on how to cancel a pickup request.
 
-| Parameter         | variable name     | Type      | Mandatory              
-|-------------------|-------------------|-----------|------------------------
-| Pickup request id | `pickup_request`  | Integer | Yes | 
+| Parameter         | variable name      | Type      | Mandatory              
+|-------------------|--------------------|-----------|------------------------
+| Pickup request id | `pickup_request_id` | Integer | Yes | 
 
 ```python
 data = {
-    "pickup_request": 4021
+    "pickup_request_id": 4021
 }
 
 res = client.cancelPickupRequest(data)
