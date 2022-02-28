@@ -31,10 +31,11 @@ class Client:
         Sets the current api url to production url.
 
     isSandBox():
-        To print an indented/prettified version of JSON.
-
-    prettyPrint(res):
         To check the current working environment.
+        
+    prettyPrint(res):
+        To print an indented/prettified version of JSON.
+        
 
     for the other methods please visit https://github.com/aymakan/python-sdk/
     """
