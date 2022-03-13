@@ -1,6 +1,6 @@
 # Aymakan Python SDK
 This is the official Aymakan Python SDK. It can be used to integrate with Aymakan APIs. The following features list 
-are available in this SDK. For more details about our API requests and responses [click here](https://developer.aymakan.com.sa/docs/1.0).
+are available in this SDK. For more details about our API requests and responses [click here](https://developer.aymakan.com.sa/docs/2).
 
 - ### [General Methods](#general-methods-1)
   - [Ping API](#ping-api-method)
@@ -79,8 +79,8 @@ Below is an example on how to fetch api status through ping method:
 res = client.pingApi();
 client.prettyPrint(res)
 ```
-
-[Ping API Details](https://developer.aymakan.com.sa/docs/1.0/ping) <p align="right">(<a href="#top">back to top</a>)</p>
+https://developer.aymakan.com.sa/docs/2/ping
+[Ping API Details](https://developer.aymakan.com.sa/docs/2/ping) <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 ### Cities Method
@@ -92,7 +92,7 @@ res = client.getCityList();
 client.prettyPrint(res)
 ```
 
-[Cities API Details](https://developer.aymakan.com.sa/docs/1.0/cities) <p align="right">(<a href="#top">back to top</a>)</p>
+[Cities API Details](https://developer.aymakan.com.sa/docs/2/cities) <p align="right">(<a href="#top">back to top</a>)</p>
 
 ----
 ## Shipping Methods
@@ -100,7 +100,7 @@ client.prettyPrint(res)
 ### Create Shipping
 
 Creates a new shipment , to find out more details about `request parameters` checkout our  
-[Create Shipping API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-shipping)
+[Create Shipping API Documentation](https://developer.aymakan.com.sa/docs/2/create-shipping)
 ```python
 data = {
     # request parameters
@@ -138,13 +138,13 @@ data = {
 res = client.createBulkShipment(data)
 client.prettyPrint(res)
 ```
-[Create Bulk Shippings API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-bulk-shippings)
+[Create Bulk Shippings API Documentation](https://developer.aymakan.com.sa/docs/2/create-bulk-shippings)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Create a Reverse Pickup Shipping
 
 Creates a reverse pickup shipment , to find out more details about `request parameters` checkout our  
-[Create Reverse Pickup Shipping API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-reverse-pickup-shipping)
+[Create Reverse Pickup Shipping API Documentation](https://developer.aymakan.com.sa/docs/2/create-reverse-pickup-shipping)
 ```python
 data = {
     # request parameters
@@ -182,7 +182,7 @@ res = client.trackShipment(['AY669001659', '143862', '143866'])
 client.prettyPrint(res)
 ```
 
-[Track Shipping API Details](https://developer.aymakan.com.sa/docs/1.0/track-shipping) 
+[Track Shipping API Details](https://developer.aymakan.com.sa/docs/2/track-shipping) 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Track Shipping Using Reference
@@ -208,7 +208,7 @@ res = client.shipmentByReference(['200018179','test-200018179'])
 client.prettyPrint(res)
 ```
 
-[Shipment By Reference API Details](https://developer.aymakan.com.sa/docs/1.0/shipments-by-reference)
+[Shipment By Reference API Details](https://developer.aymakan.com.sa/docs/2/shipments-by-reference)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Cancel Shipping
@@ -232,7 +232,7 @@ data = {
 res = client.cancelShipment(data)
 client.prettyPrint(res)
 ```
-[Cancel Shipment API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-shipping)
+[Cancel Shipment API Details](https://developer.aymakan.com.sa/docs/2/cancel-shipping)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Cancel Shipping Using Reference
@@ -258,7 +258,7 @@ res = client.cancelShipmentByReference(['200018179','test-200018179'])
 client.prettyPrint(res)
 ```
 
-[Cancel shipment By Reference API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-shipping-by-reference)
+[Cancel shipment By Reference API Details](https://developer.aymakan.com.sa/docs/2/cancel-shipping-by-reference)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Shipping AWB label Printing
@@ -278,7 +278,7 @@ returns a URL to download the pdf file for all AWB
 res = client.getShipmentLabel("AY120266")
 client.prettyPrint(res)
 ```
-[Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/1.0/shipping-awb-label)
+[Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/2/shipping-awb-label)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Bulk Shipping AWB label Printing
@@ -301,7 +301,7 @@ res = client.getBulkShipmentLabel(['AY669001659', '143862', '143866', '143892'])
 
 client.prettyPrint(res)
 ```
-[Bulk Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/1.0/bulk-awb-labels)
+[Bulk Shipping AWB label Printing API Details](https://developer.aymakan.com.sa/docs/2/bulk-awb-labels)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Customer Shipping
@@ -313,7 +313,7 @@ Below is an example on how to make the Customer Shippings API call:
 res = client.getCustomerShipments();
 client.prettyPrint(res)
 ```
-[Customer Shipping  API Details](https://developer.aymakan.com.sa/docs/1.0/customer-shipping)
+[Customer Shipping  API Details](https://developer.aymakan.com.sa/docs/2/customer-shipping)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ----
@@ -325,7 +325,7 @@ This API fetches all current customer pickup requests.
 res = client.pickupRequest()
 client.prettyPrint(res)
 ```
-[Get Pickup Requests API Details](https://developer.aymakan.com.sa/docs/1.0/pickup-requests)
+[Get Pickup Requests API Details](https://developer.aymakan.com.sa/docs/2/pickup-requests)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Create pickup request
@@ -353,7 +353,7 @@ data = {
 res = client.createPickupRequest(data)
 client.prettyPrint(res)
 ```
-[Create Pickup Request API Details](https://developer.aymakan.com.sa/docs/1.0/create-pickup-request)
+[Create Pickup Request API Details](https://developer.aymakan.com.sa/docs/2/create-pickup-request)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Cancel pickup request
@@ -371,7 +371,7 @@ data = {
 res = client.cancelPickupRequest(data)
 client.prettyPrint(res)
 ```
-[Cancel Pickup Request API Details](https://developer.aymakan.com.sa/docs/1.0/cancel-pickup-request)
+[Cancel Pickup Request API Details](https://developer.aymakan.com.sa/docs/2/cancel-pickup-request)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Time slots
@@ -385,7 +385,7 @@ Below is an example on how to fetch all time slots available to current customer
 res = client.timeSlots("2022-12-02")
 client.prettyPrint(res)
 ```
-[Time Slots API Details](https://developer.aymakan.com.sa/docs/1.0/time-slots)
+[Time Slots API Details](https://developer.aymakan.com.sa/docs/2/time-slots)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 -----
@@ -403,7 +403,7 @@ res = client.getAddress()
 client.prettyPrint(res)
 ```
 
-[Get Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-get)
+[Get Address API Details](https://developer.aymakan.com.sa/docs/2/customer-address-get)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Create Address
@@ -442,7 +442,7 @@ res = client.createAddress(data)
 client.prettyPrint(res)
 ```
 
-[Create Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-add)
+[Create Address API Details](https://developer.aymakan.com.sa/docs/2/customer-address-add)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Update Address
@@ -482,7 +482,7 @@ res = client.updateAddress(data)
 client.prettyPrint(res)
 ```
 
-[Update Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-update)
+[Update Address API Details](https://developer.aymakan.com.sa/docs/2/customer-address-update)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Delete Address
@@ -506,7 +506,7 @@ res = client.deleteAddress(data)
 client.prettyPrint(res)
 ```
 
-[Delete Address API Details](https://developer.aymakan.com.sa/docs/1.0/customer-address-delete)
+[Delete Address API Details](https://developer.aymakan.com.sa/docs/2/customer-address-delete)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ----
@@ -525,7 +525,7 @@ res = client.getWebHook()
 client.prettyPrint(res)
 ```
 
-[Get Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-get)
+[Get Webhooks API Details](https://developer.aymakan.com.sa/docs/2/web-hooks-get)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Add Webhook
@@ -548,7 +548,7 @@ res = client.createWebHook(data)
 client.prettyPrint(res)
 ```
 
-[Add Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-add)
+[Add Webhook API Details](https://developer.aymakan.com.sa/docs/2/web-hooks-add)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Update Webhook
@@ -573,7 +573,7 @@ res = client.updateWebHook(data)
 client.prettyPrint(res)
 ```
 
-[Update Webhook API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-update)
+[Update Webhook API Details](https://developer.aymakan.com.sa/docs/2/web-hooks-update)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Delete Webhook
@@ -586,5 +586,5 @@ res = client.deleteWebHook()
 client.prettyPrint(res)
 ```
 
-[Delete Webhooks API Details](https://developer.aymakan.com.sa/docs/1.0/web-hooks-delete)
+[Delete Webhooks API Details](https://developer.aymakan.com.sa/docs/2/web-hooks-delete)
 <p align="right">(<a href="#top">back to top</a>)</p>
