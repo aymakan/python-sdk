@@ -7,6 +7,7 @@ are available in this SDK. For more details about our API requests and responses
   - [Aymakan Cities](#cities-method)
 - ### [Shipping Methods](#shipping-methods-1)
   - [Create shipping](#create-shipping)
+  - [Create bulk shipping](#create-bulk-shipping)
   - [Create reverse pickup Shipping](#create-a-reverse-pickup-shipping)
   - [Track shipping](#track-shipping)
   - [Track shipping by reference](#track-shipping-using-reference)
@@ -72,7 +73,7 @@ client.prettyPrint(res)
 ## General Methods
 ### Ping API Method
 
-Below is an example on how to fetch api status through ping API call:
+Below is an example on how to fetch api status through ping method:
 
 ```python
 res = client.pingApi();
@@ -84,7 +85,7 @@ client.prettyPrint(res)
 
 ### Cities Method
 
-Below is an example on how to fetch all cities through GetCities API call:
+Below is an example on how to fetch all cities:
 
 ```python
 res = client.getCityList();
@@ -111,6 +112,34 @@ res = client.createShipment(data)
 client.prettyPrint(res)
 ```
  <p align="right">(<a href="#top">back to top</a>)</p>
+
+### Create Bulk Shipping
+
+Below is an example on how to create bulk shipments:
+#### Mandatory Parameter
+
+| Parameter | Type       | Mandatory |
+|----------|------------|----------------|
+| `shipments`       | Array of shipments |  Yes  |
+```python
+data = {
+    "shipments": [
+      {
+        # data for shipment 1
+      },
+      {
+        # data for shipment 2
+      },
+      ...
+      ...
+    ]
+}
+
+res = client.createBulkShipment(data)
+client.prettyPrint(res)
+```
+[Create Bulk Shippings API Documentation](https://developer.aymakan.com.sa/docs/1.0/create-bulk-shippings)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Create a Reverse Pickup Shipping
 
@@ -153,7 +182,8 @@ res = client.trackShipment(['AY669001659', '143862', '143866'])
 client.prettyPrint(res)
 ```
 
-[Track Shipping API Details](https://developer.aymakan.com.sa/docs/1.0/track-shipping) <p align="right">(<a href="#top">back to top</a>)</p>
+[Track Shipping API Details](https://developer.aymakan.com.sa/docs/1.0/track-shipping) 
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Track Shipping Using Reference
 

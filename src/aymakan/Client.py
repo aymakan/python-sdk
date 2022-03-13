@@ -31,10 +31,10 @@ class Client:
         Sets the current api url to production url.
 
     isSandBox():
-        To print an indented/prettified version of JSON.
+        To check the current working environment.
 
     prettyPrint(res):
-        To check the current working environment.
+        To print an indented/prettified version of JSON.
 
     for the other methods please visit https://github.com/aymakan/python-sdk/
     """
@@ -136,6 +136,9 @@ class Client:
 
     def createShipment(self, data):
         return self.__callAPI('POST', self.__url + '/shipping/create', data)
+
+    def createBulkShipment(self, data):
+        return self.__callAPI('POST', self.__url + '/shipping/create/bulk_shipping', data)
 
     def createReversePickupShipment(self, data):
         return self.__callAPI('POST', self.__url + '/shipping/create/reverse_pickup', data)
